@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="com.studycafe.www.mappers.loginMapper">
+
+	<!-- 로그인 (실행) - 닉네임 -->
+	<select id="selectOne" resultType="String">
+		SELECT nickname FROM sign WHERE email=#{email} AND pw=#{pw}
+	</select>
+	
+	
+	
+	<!-- 로그인 (실행) - 사진 -->
+	<select id="selectTwo" resultType="String">
+		SELECT photo FROM sign WHERE email=#{email} AND pw=#{pw}
+	</select>
+
+
+	
+	<!-- 로그인 (실행) - 번호 -->
+	<select id="selectThree" resultType="int">
+		SELECT no FROM sign WHERE email=#{email} AND pw=#{pw}
+	</select>
+	
+	
+	
+	<!-- 카카오 로그인 (실행) -->
+	<select id="selectFour" resultType="int">
+		SELECT * FROM sign WHERE email=#{email}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+

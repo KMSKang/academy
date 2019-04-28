@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="com.studycafe.www.mappers.reservationMapper">
+
+	<!-- 스터디카페 예약 작성 페이지 - (실행) -->
+	<insert id="create"
+		parameterType="com.studycafe.www.Reservation.VO.InfoVO">
+		INSERT INTO reservation
+		(
+		name,
+		photo1,
+		photo2,
+		photo3,
+		photo4,
+		photo5,
+		photo6,
+		photo7,
+		photo8,
+		photo9,
+		photo10,
+		photo11,
+		photo12,
+		photo13,
+		photo14,
+		photo15,
+		photo16,
+		photo17,
+		photo18,
+		photo19,
+		photo20,
+		position,
+		infoPosition,
+		phoneNumber,
+		weekdayOperatingTime,
+		weekendOperatingTime,
+		holidayOperatingTime,
+		weekdayPrice,
+		weekendPrice,
+		holidayPrice,
+		informationUse1,
+		informationUse2,
+		informationUse3,
+		informationUse4,
+		informationUse5,
+		informationUse6,
+		informationUse7,
+		informationUse8,
+		informationUse9,
+		informationUse10,
+		roomName11,
+		roomName12,
+		roomName13,
+		roomName14,
+		roomName15,
+		roomName16,
+		roomName17,
+		roomName18,
+		roomName19,
+		roomName20,
+		date
+		)
+		VALUE
+		(
+		#{name},
+		#{photo1},
+		#{photo2},
+		#{photo3},
+		#{photo4},
+		#{photo5},
+		#{photo6},
+		#{photo7},
+		#{photo8},
+		#{photo9},
+		#{photo10},
+		#{photo11},
+		#{photo12},
+		#{photo13},
+		#{photo14},
+		#{photo15},
+		#{photo16},
+		#{photo17},
+		#{photo18},
+		#{photo19},
+		#{photo20},
+		#{position},
+		#{infoPosition},
+		#{phoneNumber},
+		#{weekdayOperatingTime},
+		#{weekendOperatingTime},
+		#{holidayOperatingTime},
+		#{weekdayPrice},
+		#{weekendPrice},
+		#{holidayPrice},
+		#{informationUse1},
+		#{informationUse2},
+		#{informationUse3},
+		#{informationUse4},
+		#{informationUse5},
+		#{informationUse6},
+		#{informationUse7},
+		#{informationUse8},
+		#{informationUse9},
+		#{informationUse10},
+		#{roomName11},
+		#{roomName12},
+		#{roomName13},
+		#{roomName14},
+		#{roomName15},
+		#{roomName16},
+		#{roomName17},
+		#{roomName18},
+		#{roomName19},
+		#{roomName20},
+		now()
+		)
+	</insert>
+	
+	
+	<!-- 스터디카페 예약 메인 페이지 - (실행) -->
+	<select id="selectList" resultType="com.studycafe.www.Reservation.VO.InfoVO">
+		SELECT * FROM reservation
+	</select>
+	
+	<!-- 스터디카페 예약 상세 페이지 - (페이지) -->
+	<select id="selectOne" resultType="com.studycafe.www.Reservation.VO.InfoVO">
+	SELECT * FROM reservation WHERE no = #{id}
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
