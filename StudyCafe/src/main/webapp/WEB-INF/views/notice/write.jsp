@@ -26,7 +26,7 @@
 
 
 
-	<form style="margin: 0 auto; width: 1000px;">
+	<form action="/notice/writeOK" style="margin: 0 auto; width: 400px;" method="POST">
 
 		<div>
 			<p
@@ -34,36 +34,20 @@
 			<hr style="border: 0; height: 3px; background: #ccc;">
 		</div>
 
-
-		<table class="table table-hover" style="margin-top: -20px;">
-
-			<thead>
-				<tr>
-					<th>번호</th>
-					<th>제목</th>
-					<th>작성자</th>
-					<th>작성일</th>
-				</tr>
-			</thead>
-
-			<c:forEach items="${noticeList}" var="noticeList">
-				<tbody>
-					<tr>
-						<td>${noticeList.no}</td>
-						<td>${noticeList.title}</td>
-						<td>${noticeList.nickname}</td>
-						<td>${noticeList.date}</td>
-					</tr>
-				</tbody>
-			</c:forEach>
-
-		</table>
-
-
-		<div>
-			<a href="/notice/write" class="btn btn-default btn-sm"
-				style="display: block; float: right; margin-bottom: 20px;">글쓰기</a>
+		<div class="form-group">
+			<label for="title">제목</label> <input type="text" class="form-control"
+				placeholder="제목을 입력주세요" name="title">
 		</div>
+
+		<div class="form-group">
+			<label for="title">내용</label> <textarea class="form-control" style="height: 600px;" placeholder="내용을 입력주세요" name="content"></textarea>
+		</div>
+
+		<div class="form-group" style="margin-left: 5%;">
+			<button type="submit" class="btn btn-default btn-sm"
+				style="display: block; float: left; margin-left: 150px; margin-top: 20px; margin-bottom: 30px;">등록</button>
+		</div>
+
 
 	</form>
 

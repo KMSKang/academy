@@ -12,11 +12,11 @@ import com.studycafe.www.SignUp.VO.SignUpVO;
 public class MemberListServiceImpl implements MemberListServiceInt{
 	
 	@Autowired
-	MemberListDaoInt dao;
+	MemberListDaoInt memberListDaoInt;
 	
 	// 회원 리스트 (페이지)
 	public List<SignUpVO> selectList(){
-		return dao.selectList();
+		return memberListDaoInt.selectList();
 	}
 
 }

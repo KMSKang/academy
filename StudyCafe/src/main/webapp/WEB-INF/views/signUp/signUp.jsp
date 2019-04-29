@@ -52,7 +52,7 @@
 
 		<div>
 			<button type="submit" class="btn btn-default btn-sm"
-				style="display: block; float: left; margin-left: 150px; margin-top: 20px; margin-bottom: 30px;">수정해야함</button>
+				style="display: block; float: left; margin-left: 170px; margin-top: 20px; margin-bottom: 30px;">등록</button>
 		</div>
 
 	</form>

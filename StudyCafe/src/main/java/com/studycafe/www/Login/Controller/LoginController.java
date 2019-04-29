@@ -30,6 +30,8 @@ public class LoginController {
 		
 		// 접속한 닉네임
 		String name = loginServiceInt.selectOne(loginVO);
+		System.out.println(name);
+		System.out.println("1");
 		// 접속한 프로필사진
 		String photo = loginServiceInt.selectTwo(loginVO);
 		

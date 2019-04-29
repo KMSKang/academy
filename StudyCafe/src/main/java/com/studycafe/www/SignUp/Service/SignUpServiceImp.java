@@ -16,7 +16,7 @@ import com.studycafe.www.SignUp.VO.SignUpVO;
 public class SignUpServiceImp implements SignUpServiceInt {
 
 	@Autowired
-	SignUpDaoInt dao;
+	SignUpDaoInt signUpDaoInt;
 
 	// 회원가입 페이지 OK - (페이지)
 	@Transactional
@@ -36,7 +36,7 @@ public class SignUpServiceImp implements SignUpServiceInt {
 			signUpVO.setPhoto(imgName);
 		}
 
-		int result = dao.create(signUpVO);
+		int result = signUpDaoInt.create(signUpVO);
 
 		if (result == 0) {
 			System.out.println("Join Fail!!");
@@ -49,7 +49,7 @@ public class SignUpServiceImp implements SignUpServiceInt {
 	@Override
 	public int kakaoCreate(KakaoSignUpVO kakaoSignUpVO) {
 
-		int result = dao.kakaoCreate(kakaoSignUpVO);
+		int result = signUpDaoInt.kakaoCreate(kakaoSignUpVO);
 
 		return result;
 

@@ -34,8 +34,7 @@ table th {
 	<form style="margin: 0 auto; width: 1000px;">
 
 		<div>
-			<p style="font-size: 20px; font-weight: 900; text-align: center;">회원
-				리스트</p>
+			<p style="font-size: 20px; font-weight: 900; text-align: center;">회원 리스트</p>
 			<hr style="border: 0; height: 3px; background: #ccc;">
 		</div>
 
@@ -57,14 +56,14 @@ table th {
 						<td id="td">${memberList.no}</td>
 
 						<!-- 카카오라는 글자가 있으면 -->
-						<c:if test="${ memberList.photo.indexOf('kakaocdn') != -1}">
+						<c:if test="${memberList.photo.indexOf('kakaocdn') != -1}">
 							<td><img src="${memberList.photo}" class="img-circle"
 								style="width: 100px; height: 100px;"></td>
 						</c:if>
 
 						<!-- 카카오라는 글자가 없으면 -1 -->
-						<c:if test="${ memberList.photo.indexOf('kakaocdn') == -1}">
-							<td><img src="uploadFile/memberPhoto/${memberList.photo}"
+						<c:if test="${memberList.photo.indexOf('kakaocdn') == -1}">
+							<td><img src="/uploadFile/memberPhoto/${memberList.photo}"
 								class="img-circle" style="width: 100px; height: 100px;"></td>
 						</c:if>
 						

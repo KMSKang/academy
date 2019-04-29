@@ -113,13 +113,13 @@ img {
 		</div>
 	</nav>
 
-	<!-- <div style="position: absolute;">
+	<div style="position: absolute;">
 		<ul style="list-style: none; font-weight: bold;">
 			<li><a href="/reservation/main.do" id="left_a" style="color: black; text-decoration: none;">스터디 예약</a></li>
 			<li><a href="/recruitmentMain.do" id="left_a" style="color: black; text-decoration: none;">스터디 모집</a></li>
 			<li><a href="/studySignUpMain.do" id="left_a" style="color: black; text-decoration: none;">스터디 가입</a></li>
 		</ul>
-	</div> -->
+	</div>
 
 </body>
 </html>

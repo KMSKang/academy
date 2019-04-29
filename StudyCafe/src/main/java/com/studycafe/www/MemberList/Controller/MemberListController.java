@@ -11,13 +11,13 @@ import com.studycafe.www.MemberList.Service.MemberListServiceInt;
 public class MemberListController {
 
 	@Autowired
-	MemberListServiceInt service;
+	MemberListServiceInt memberListServiceInt;
 	
 	// 회원 리스트 (페이지)
 	@RequestMapping("/memberList/main")
 	public String memberList(Model model) {
 		
-		model.addAttribute("memberList", service.selectList());
+		model.addAttribute("memberList", memberListServiceInt.selectList());
 		
 		return "/memberList/main";
 	}
