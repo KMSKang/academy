@@ -11,9 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.studycafe.www.Notice.Service.NoticeServiceInt;
 import com.studycafe.www.Notice.VO.NoticeVO;
+import com.studycafe.www.Notice.VO.Pagination;
 
 @Controller
 public class NoticeController {
@@ -23,9 +25,21 @@ public class NoticeController {
 
 	// 공지사항 메인 페이지 - (페이지)
 	@RequestMapping("/notice/main")
-	public String noticeMain(Model model) {
+	public String noticeMain(Model model, @RequestParam(required = false, defaultValue = "1") int page,
+			@RequestParam(required = false, defaultValue = "1") int range) throws Exception {
 
-		model.addAttribute("noticeList", noticeServiceInt.selectList());
+		// 전체 게시글 개수
+		int listCnt = noticeServiceInt.selectListCnt();
+
+		// Pagination 객체 생성
+		Pagination pagination = new Pagination();
+		pagination.pageInfo(page, range, listCnt);
+		
+		// 공지사항 페이징처리
+		model.addAttribute("pagination", pagination);
+		
+		// 공지사항 리스트
+		model.addAttribute("noticeList", noticeServiceInt.selectList(pagination));
 
 		return "/notice/main";
 	}

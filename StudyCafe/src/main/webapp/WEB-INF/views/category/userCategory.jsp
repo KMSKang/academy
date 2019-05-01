@@ -91,14 +91,6 @@ img {
 							class="glyphicon glyphicon-log-in"></span>Logout </a></li>
 				</ul>
 			</c:if>
-			<form class="navbar-form navbar-left" action="/action_page.php">
-
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Search">
-				</div>
-
-				<button type="submit" class="btn btn-default">Submit</button>
-			</form>
 
 		</div>
 

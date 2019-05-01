@@ -14,14 +14,15 @@ import com.studycafe.www.Mypage.VO.MypageVO;
 public class MypageServiceImp implements MypageServiceInt {
 
 	@Autowired
-	MypageDaoInt dao;
+	MypageDaoInt mypageDaoInt;
 
-	// 마이페이지 (페이지)
-	public MypageVO selectOne(int no) {
-		return dao.selectOne(no);
+	// 마이페이지 - (페이지)
+	@Override
+	public MypageVO selectOne(String email) {
+		return mypageDaoInt.selectOne(email);
 	}
 
-	// 마이페이지 수정 (실행)
+	// 마이페이지 수정 - (실행)
 	@Override
 	public int update(MypageVO mypageVO, HttpServletRequest request) throws Exception {
 		
@@ -37,7 +38,13 @@ public class MypageServiceImp implements MypageServiceInt {
 
 			mypageVO.setPhoto(imgName);
 		}
-		return dao.update(mypageVO);
+		return mypageDaoInt.update(mypageVO);
+	}
+	
+	// 마이페이지 탈퇴 - (실행)
+	@Override
+	public int delete(MypageVO mypageVO) {
+		return mypageDaoInt.delete(mypageVO);
 	}
 
 }

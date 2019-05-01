@@ -30,6 +30,12 @@ public class LoginServiceImp implements LoginServiceInt {
 	public int selectThree(LoginVO loginVO) {
 		return dao.selectThree(loginVO);
 	}
+	
+	// 로그인 (실행) - 비밀번호
+	@Override
+	public String selectFive(LoginVO loginVO) {
+		return dao.selectFive(loginVO);
+	}
 
 	// 카카오 로그인 (실행)
 	@Override

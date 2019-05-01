@@ -73,7 +73,7 @@ input {
 			<input type="text" class="form-control" id="email" name="email"
 				style="background: none;" readonly>
 		</div>
-
+		
 		<div class="form-group">
 			<label
 				style="font-size: 14px; font-weight: 550; margin-top: 5%; margin-left: 46%;">pw</label>
@@ -90,6 +90,7 @@ input {
 					<button type="submit" class="btn btn-default btn-sm">탈퇴</button>
 				</div>
 			</div>
+			
 		</div>
 	</form>
 

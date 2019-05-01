@@ -15,14 +15,19 @@ public class MypageDaoImp implements MypageDaoInt {
 
 	private static String namespace = "com.studycafe.mappers.mypageMapper";
 
-	// 마이페이지 (페이지)
-	public MypageVO selectOne(int no) {
-		return session.selectOne(namespace + ".selectOne", no);
+	// 마이페이지 - (페이지)
+	public MypageVO selectOne(String email) {
+		return session.selectOne(namespace + ".selectOne", email);
 	}
 
-	// 마이페이지 수정 (실행)
+	// 마이페이지 수정 - (실행)
 	public int update(MypageVO mypageVO) {
 		return session.update(namespace + ".update", mypageVO);
+	}
+	
+	// 마이페이지 탈퇴 - (실행)
+	public int delete(MypageVO mypageVO) {
+		return session.delete(namespace + ".delete", mypageVO);
 	}
 
 }

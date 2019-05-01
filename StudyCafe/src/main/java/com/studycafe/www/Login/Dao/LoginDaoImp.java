@@ -34,6 +34,12 @@ public class LoginDaoImp implements LoginDaoInt {
 		return session.selectOne(namespace + ".selectThree", loginVO);
 	}
 	
+	// 로그인 (실행) - 비밀번호
+	@Override
+	public String selectFive(LoginVO loginVO) {
+		return session.selectOne(namespace + ".selectFive", loginVO);
+	}
+	
 	// 카카오 로그인 (실행)
 	@Override
 	public int selectFour(KakaoLoginVO kakaoLoginVO) {

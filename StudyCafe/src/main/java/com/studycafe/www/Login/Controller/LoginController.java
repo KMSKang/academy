@@ -1,5 +1,9 @@
 package com.studycafe.www.Login.Controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.studycafe.www.Login.Service.LoginServiceInt;
 import com.studycafe.www.Login.VO.LoginVO;
@@ -17,7 +20,7 @@ public class LoginController {
 
 	@Autowired
 	LoginServiceInt loginServiceInt;
-	
+
 	// 로그인 (페이지)
 	@RequestMapping("/login/main")
 	public String Login() {
@@ -26,39 +29,50 @@ public class LoginController {
 
 	// 로그인 (실행)
 	@RequestMapping(value = "/loginOK", method = RequestMethod.POST)
-	public ModelAndView LoginOK(@ModelAttribute LoginVO loginVO, HttpSession session, ModelAndView mav) {
-		
-		// 접속한 닉네임
-		String name = loginServiceInt.selectOne(loginVO);
-		System.out.println(name);
-		System.out.println("1");
-		// 접속한 프로필사진
+	public String LoginOK(@ModelAttribute LoginVO loginVO, HttpSession session, HttpServletResponse response) throws IOException {
+
+		// 아이디 있는지 확인
+		String nickName = loginServiceInt.selectOne(loginVO);
+
+		// 아이디의 사진 가져오기
 		String photo = loginServiceInt.selectTwo(loginVO);
 		
-		int no = loginServiceInt.selectThree(loginVO);
+		// 접속한 아이디의 넘버 가져오기
+//		int no = loginServiceInt.selectThree(loginVO);
+		
+		// 접속한 아이디의 pw 가져오기
+		String pw = loginServiceInt.selectFive(loginVO);
 
 		// 로그인 성공
-		if (name != null) {
-			session.setAttribute("uid", loginVO.getEmail()); // 관리자의 아이디 이름
-			session.setAttribute("no", no);
-			session.setAttribute("nickname", name); // 관리자의 이름
-			session.setAttribute("photo", photo); // 관리자의 이름
-			mav.setViewName("/home"); // 맞으면 admin/admin.jsp로 이동
-			mav.addObject("message", "success");
+		if (nickName != null) {
+//			session.setAttribute("no", no);
+			session.setAttribute("email", loginVO.getEmail()); // 접속자의 비밀번호 세션에 저장
+			session.setAttribute("pw", pw); // 접속자의 비밀번호 세션에 저장
+			session.setAttribute("nickname", nickName); // 접속자의 비밀번호 세션에 저장
+			session.setAttribute("photo", photo); // 접속자의 비밀번호 세션에 저장
+			return "/home";
+
 		// 로그인 실패
 		} else {
-			mav.setViewName("/login/main"); // 틀리면 admin/login.jsp로 이동
-			mav.addObject("message", "error");
+			
+			response.setContentType("text/html; charset=UTF-8");
+			
+			PrintWriter out = response.getWriter();
+			
+			out.println("<script>alert('아이디 또는 비밀번호를 다시 확인해주세요!'); </script>");
+			
+			out.flush();
+			
+			return "/login/main";
 		}
-		return mav;
 	}
-	
+
 	// 로그아웃 (실행)
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
-		
+
 		session.invalidate();
-		
+
 		return "redirect:/";
 	}
 

@@ -14,6 +14,9 @@ public interface LoginDaoInt {
 	// 로그인 (실행) - 번호
 	public int selectThree(LoginVO loginVO);
 	
+	// 로그인 (실행 ) - 비밀번호
+	public String selectFive(LoginVO loginVO);
+	
 	// 카카오 로그인
 	public int selectFour(KakaoLoginVO kakaoLoginVO);
 }

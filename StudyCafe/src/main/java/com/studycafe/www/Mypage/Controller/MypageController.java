@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.studycafe.www.Login.Service.LoginServiceInt;
 import com.studycafe.www.Mypage.Service.MypageServiceInt;
 import com.studycafe.www.Mypage.VO.MypageVO;
 
@@ -20,84 +21,103 @@ import com.studycafe.www.Mypage.VO.MypageVO;
 public class MypageController {
 
 	@Autowired
-	MypageServiceInt service;
+	MypageServiceInt mypageServiceInt;
 
-	// 마이페이지 (페이지)
+	@Autowired
+	LoginServiceInt loginServiceInt;
+
+	// 마이페이지 - (페이지)
 	@RequestMapping("/mypage/main")
-	public String main(Model model, MypageVO mypageVO, HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public String main(Model model, MypageVO mypageVO, HttpServletRequest request, HttpServletResponse response)
+			throws IOException {
 
 		HttpSession session = request.getSession();
 
-		String url = "";
-		
-		if (session.getAttribute("no") == null) {
-			
+		if (session.getAttribute("email") == null) {
+
 			response.setContentType("text/html; charset=UTF-8");
-			
+
 			PrintWriter out = response.getWriter();
-			
+
 			out.println("<script>alert('로그인이 필요합니다!');</script>");
-			
+
 			out.flush();
-			
-			url = "/login/main";
+
+			return "/login/main";
 
 		} else {
 
-			int no = (int) session.getAttribute("no");
+			String email = (String) session.getAttribute("email");
 
-			model.addAttribute("mypage", service.selectOne(no));
+			model.addAttribute("mypage", mypageServiceInt.selectOne(email));
 
-			url = "/mypage/main";
+			return "/mypage/main";
 
 		}
-		return url;
 	}
 
-	// 마이페이지 수정 (페이지)
+	// 마이페이지 수정 - (페이지)
 	@RequestMapping("/mypage/modify")
 	public String modify(Model model, HttpServletRequest request) {
 
 		HttpSession session = request.getSession();
 
-		int no = (int) session.getAttribute("no");
+		String email = (String) session.getAttribute("email");
 
-		model.addAttribute("mypage", service.selectOne(no));
+		model.addAttribute("mypage", mypageServiceInt.selectOne(email));
 
 		return "/mypage/modify";
 	}
 
-	// 마이페이지 수정 (실행)
+	// 마이페이지 수정 - (실행)
 	@RequestMapping(value = "/mypage/modifyOK", method = RequestMethod.POST)
 	public String modifyOK(MypageVO mypageVO, HttpServletRequest request, HttpSession session) throws Exception {
 
-		service.update(mypageVO, request);
+		mypageServiceInt.update(mypageVO, request);
 
 		session.setAttribute("photo", mypageVO.getPhoto());
 
 		return "redirect:/mypage/main";
 	}
 
-	// 마이페이지 삭제 (페이지)
+	// 마이페이지 삭제 - (페이지)
 	@RequestMapping("/mypage/delete")
 	public String delete(Model model, HttpServletRequest request) {
 
 		HttpSession session = request.getSession();
 
-		int no = (int) session.getAttribute("no");
+		String email = (String) session.getAttribute("email");
 
-		model.addAttribute("mypage", service.selectOne(no));
+		model.addAttribute("mypage", mypageServiceInt.selectOne(email));
 
 		return "/mypage/delete";
 	}
 
-	// 마이페이지 삭제 (실행)
-//	@RequestMapping("/mypage/deleteOK")
-//	public String deleteOK() {
-//		
-//		service.delete();
-//		
-//		return "redirect:/";
-//	}
+	// 마이페이지 탈퇴 - (실행)
+	@RequestMapping("/mypage/deleteOK")
+	public String deleteOK(MypageVO mypageVO, HttpServletRequest request) {
+
+		HttpSession session = request.getSession();
+
+		String email = (String) session.getAttribute("email");
+
+		String pw = (String) session.getAttribute("pw");
+
+		mypageVO.setPw(pw);
+		
+		mypageVO.setEmail(email);
+
+		if (email != null) {
+			
+			System.out.println("삭제 성공 111");
+			
+			mypageServiceInt.delete(mypageVO);
+			
+		} else {
+			
+		}
+
+		return "redirect:/logout";
+	}
 
 }

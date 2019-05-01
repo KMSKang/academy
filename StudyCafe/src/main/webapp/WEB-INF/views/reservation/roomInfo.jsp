@@ -342,13 +342,13 @@
 						<div style="overflow: hidden;" id="div12">
 							<div class="form-group">
 								<div class="row">
-									<div class="col-md-8" style="width: 102%;">
+									<div class="col-md-8" id="datetime" style="width: 102%;">
 										<input type='text' class="form-control inputDate"
-											id="datetimepicker12" style="visibility: hidden;" />
+											id="datetimepicker12"/>
 										<div id="datetimepicker12"></div>
+										
 
-										<hr
-											style="border-width: 1px 0px 0px 0px; border-style: solid; border-color: #808080; height: 1px;">
+										<hr style="border-width: 1px 0px 0px 0px; border-style: solid; border-color: #808080; height: 1px;">
 
 
 
@@ -384,8 +384,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -399,8 +402,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -428,8 +434,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -467,8 +476,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -482,8 +494,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -511,8 +526,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -551,8 +569,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -566,8 +587,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -595,8 +619,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -635,8 +662,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -650,8 +680,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -679,8 +712,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -719,8 +755,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -734,8 +773,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -763,8 +805,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -803,8 +848,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -818,8 +866,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -847,8 +898,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -887,8 +941,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -902,8 +959,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -933,8 +993,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -974,8 +1037,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -989,8 +1055,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1018,8 +1087,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1058,8 +1130,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1073,8 +1148,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1103,8 +1181,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1143,8 +1224,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1158,8 +1242,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1187,8 +1274,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1227,8 +1317,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1242,8 +1335,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1271,8 +1367,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1311,8 +1410,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1326,8 +1428,14 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
+														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1355,8 +1463,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. ---------------------------*/
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1396,7 +1507,7 @@
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1410,8 +1521,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1440,8 +1554,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. ---------------------------*/
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1458,18 +1575,21 @@
 														id="button_twentyTwo">
 												</div>
 
-											<script>
-											/* 예약 - 22:00 ~ 23:00 시간의 버튼을 클릭하면 */
-											$("#button_twentyTwo").click(function() {
+												<script>
+												/* 예약 - 22:00 ~ 23:00 시간의 버튼을 클릭하면 */
+												$("#button_twentyTwo").click(function() {
 														
-												/* 예약 - 예약하기 버튼의 속성이 disabled로 변경된다. */
-												$("#button_twentyTwo").attr("disabled","disabled");
+														/* 예약 - 예약하기 버튼의 속성이 disabled로 변경된다. */
+														$("#button_twentyTwo").attr("disabled","disabled");
 														
 														/* 예약 - 예약하기 버튼의 값이 예약완료로 변경된다. */
 														$("#button_twentyTwo").attr("value","예약완료");
 														
 														/* 예약확인 - 예약시간 밑에 예약하기 누른 시간대의 버튼이 생긴다. */
 														$("<input type='button' value='22:00 ~ 23:00 ㅣ ×' class='btn btn-default' id='button_twentyTwo_delete'>").appendTo("#reservation_left");
+														
+														/* 예약 - 예약하기를 누르면 input text로 예약한 시간의 값이 보내진다. */
+														$("#end_time").val("22:00~23:00");
 														
 														/* 예약 확인 - 예약시간에 있는 버튼의 수를 센다 */
 														var time = $("#reservation_left").children("input[type=button]").length;
@@ -1480,8 +1600,11 @@
 														/* 예약확인 - 인원 수의 값을 저장한다. */
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1495,8 +1618,11 @@
 														/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 														$("#reservation_people").html(numberPeople + "명");
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1506,6 +1632,9 @@
 												/* 예약확인 - 예약하기 누른 시간대의 버튼을 클릭하면(삭제) */
 												$("#button_twentyTwo_delete").on('click', function() {
 															
+														/* 예약 - 예약하기를 누르면 input text로 예약한 시간의 값이 보내진다. */
+														$("#end_time").val("");
+													
 														/* 예약확인 - 누른 시간대의 버튼이 사라진다. */
 														$(this).remove();
 															
@@ -1524,8 +1653,11 @@
 														/* 예약확인 - 인원 수의 값이 저장된다. ---------------------------*/
 														var numberPeople = $("#select_NumberOfPeople").val();
 														
+														/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+														var datePrice = $("#end_price").val();
+														
 														/* 총 결제 금액 */
-														var result = parseInt(1500 * time * numberPeople);
+														var result = parseInt(datePrice * time * numberPeople);
 														
 														/* 예약확인 - 총 결제 금액을 바꾼다. */
 														$("#sum").html(result + "원")
@@ -1545,15 +1677,19 @@
 											<script>
 											/* 예약 - 23:00 ~ 24:00 시간의 버튼을 클릭하면 */
 											$("#button_twentyThree").click(function() {
-														
+												
 												/* 예약 - 예약하기 버튼의 속성이 disabled로 변경된다. */
 												$("#button_twentyThree").attr("disabled","disabled");
+												
 												/* 예약 - 예약하기 버튼의 값이 예약완료로 변경된다. */
 												$("#button_twentyThree").attr("value","예약완료");
 												
 												/* 예약확인 - 예약시간 밑에 예약하기 누른 시간대의 버튼이 생긴다. */
 												/* 고쳐야함  2개*/
 												$("<input type='button' value='23:00 ~ 24:00 ㅣ ×' class='btn btn-default' id='button_twentyThree_delete'>").appendTo("#reservation_left");
+												
+												/* 예약 - 예약하기를 누르면 input text로 예약한 시간의 값이 보내진다. */
+												$("#end_time").val("23:00~24:00");
 												
 												/* 예약 확인 - 예약시간에 있는 버튼의 수를 센다 */
 												var time = $("#reservation_left").children("input[type=button]").length;
@@ -1564,8 +1700,11 @@
 												/* 예약확인 - 인원 수의 값을 저장한다. */
 												var numberPeople = $("#select_NumberOfPeople").val();
 												
+												/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+												var datePrice = $("#end_price").val();
+												
 												/* 총 결제 금액 */
-												var result = parseInt(1500 * time * numberPeople);
+												var result = parseInt(datePrice * time * numberPeople);
 												
 												/* 예약확인 - 총 결제 금액을 바꾼다. */
 												$("#sum").html(result + "원")
@@ -1575,21 +1714,26 @@
 												
 													/* 예약확인 - 인원 수의 값이 저장된다. */
 													var numberPeople = $("#select_NumberOfPeople").val();
-											
+													
 													/* 예약확인 - 총 결제 금액에서 명(@명)으로 변경된다. */
 													$("#reservation_people").html(numberPeople + "명");
 													
+													/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+													var datePrice = $("#end_price").val();
+													
 													/* 총 결제 금액 */
-													var result = parseInt(1500 * time * numberPeople);
+													var result = parseInt(datePrice * time * numberPeople);
 													
 													/* 예약확인 - 총 결제 금액을 바꾼다. */
 													$("#sum").html(result + "원")
 														
 												});
 														
-												console.log($('#button_twentyThree_delete'))
 												/* 예약확인 - 예약한 시간대의 버튼을 클릭하면 */
 												$("#button_twentyThree_delete").on('click', function() {
+													
+													/* 예약 - 예약하기를 누르면 input text로 예약한 시간의 값이 보내진다. */
+													$("#end_time").val("");
 															
 													/* 예약확인 - 누른 시간대의 버튼이 사라진다. */
 													$(this).remove();
@@ -1609,8 +1753,11 @@
 													/* 예약확인 - 인원 수의 값이 저장된다. ---------------------------*/
 													var numberPeople = $("#select_NumberOfPeople").val();
 													
+													/* 예약확인 - 클릭한 날짜의 가격 값을 datePrice에 저장한다. */
+													var datePrice = $("#end_price").val();
+													
 													/* 총 결제 금액 */
-													var result = parseInt(1500 * time * numberPeople);
+													var result = parseInt(datePrice * time * numberPeople);
 													
 													/* 예약확인 - 총 결제 금액을 바꾼다. */
 													$("#sum").html(result + "원")
@@ -1691,7 +1838,7 @@
 								<div class="col-md-4">
 									<div id="resnervation_right" style="width: 230px;">
 										<p>총 결제 금액</p>
-										<span>1,500원</span>
+										<span id="reservation_price">0원</span>
 										<span>×</span>
 										<span id="reservation_time">0시간</span>
 										<span>×</span>
@@ -1701,6 +1848,8 @@
 									</div>
 								</div>
 								
+								
+								
 								<div class="col-md-3">
 								
 									<input type="submit" value="예약하기" class="btn btn-default" style="font-size: 27px; margin-top: 3%;">
@@ -1708,12 +1857,17 @@
 								</div>
 								
 							</div>
+								
 
 						</div>
 					</div>
 
 				</div>
 				<!-- 예약확인 끝 -->
+								<input type="text" id="end_price" style="width:100px;">
+								<input type="text" id="end_time" style="width:100px;">
+								<input type="text" id="end_people" style="width:100px;">
+								<input type="text" id="end_sum" style="width:100px;">
 			</div>
 
 		</div>
@@ -1731,8 +1885,8 @@
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/resources/bootstrap/datepicker/bootstrap-datetimepicker.js"></script>
 
+	<!-- 탭 -->
 	<script>
-		/* 탭 */
 		$(function() {
 			$('#myTab a:last').tab('show')
 		});
@@ -1746,6 +1900,7 @@
 				sideBySide : true,
 				format : 'YYYY년 - MM월 - DD일'
 			});
+			addEvent();
 		});
 	</script>
 
@@ -1754,7 +1909,29 @@
 			$(".timepicker ").remove();
 		});
 	</script>
-
-	<!-- 예약시간 -->
+		
+		<script>
+		function addEvent(){
+			for(day of $('.day')){
+				$(day).click(clickDay)
+			}
+		}
+		
+		var price;
+		
+		function clickDay(e){
+			setTimeout(function(){
+				if($('.day')[0].onClick != clickDay) addEvent();
+			}, 100)
+			var price = $(e.target).hasClass('weekend') ? 2000 : 1500;
+			
+			/* input text에 price값을 입력한다. */
+			$("#end_price").val(price);
+			
+			/* 날짜를 클릭하면 클릭한 날의 가격이 예약확인 - 총 결제금액 (@원)에 입력된다. */
+			$("#reservation_price").html(price + "원");
+			
+		}
+		</script>
 </body>
 </html>
