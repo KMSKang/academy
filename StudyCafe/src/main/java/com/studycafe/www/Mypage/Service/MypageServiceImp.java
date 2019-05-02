@@ -46,5 +46,11 @@ public class MypageServiceImp implements MypageServiceInt {
 	public int delete(MypageVO mypageVO) {
 		return mypageDaoInt.delete(mypageVO);
 	}
+	
+	// 마이페이지 탈퇴 [아이디,패스워드] - (실행)
+	@Override
+	public String selectOneCheck(MypageVO mypageVO) {
+		return mypageDaoInt.selectOneCheck(mypageVO);
+	}
 
 }

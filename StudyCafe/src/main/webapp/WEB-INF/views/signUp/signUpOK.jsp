@@ -18,6 +18,7 @@
 	font-size: 20px;
 	font-weight: 900;
 	margin-left: 20px;
+	text-align: center;
 }
 
 #hr {
@@ -58,7 +59,7 @@ margin-left: 50px;
 
 #write{
 margin-top: 20px;
-margin-left: 143px;
+margin-left: 32%;
 }
 </style>
 

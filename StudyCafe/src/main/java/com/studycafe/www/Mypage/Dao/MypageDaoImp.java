@@ -29,5 +29,10 @@ public class MypageDaoImp implements MypageDaoInt {
 	public int delete(MypageVO mypageVO) {
 		return session.delete(namespace + ".delete", mypageVO);
 	}
+	
+	// 마이페이지 탈퇴 [아이디,패스워드] - (실행)
+	public String selectOneCheck(MypageVO mypageVO) {
+		return session.selectOne(namespace + ".selectOneCheck", mypageVO);
+	}
 
 }

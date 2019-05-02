@@ -21,13 +21,13 @@ public class LoginController {
 	@Autowired
 	LoginServiceInt loginServiceInt;
 
-	// 로그인 (페이지)
+	// 로그인 - (페이지)
 	@RequestMapping("/login/main")
 	public String Login() {
 		return "/login/main";
 	}
 
-	// 로그인 (실행)
+	// 로그인 - (실행)
 	@RequestMapping(value = "/loginOK", method = RequestMethod.POST)
 	public String LoginOK(@ModelAttribute LoginVO loginVO, HttpSession session, HttpServletResponse response) throws IOException {
 
@@ -67,13 +67,23 @@ public class LoginController {
 		}
 	}
 
-	// 로그아웃 (실행)
+	// 로그아웃 - (실행)
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 
 		session.invalidate();
 
 		return "redirect:/";
+	}
+	
+	// 로그아웃  - (실행)
+	@RequestMapping("/logoutMemberList")
+	public String logoutMemberList(HttpSession session) {
+		
+		session.invalidate();
+		
+		return "redirect:/memberList/main";
+		
 	}
 
 }

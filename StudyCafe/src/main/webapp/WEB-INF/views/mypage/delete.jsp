@@ -10,17 +10,6 @@
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-<script>
-	$(document).ready(function() {
-		$("#img").click(function() {
-			$("#file").click();
-		});
-
-		$('#email').val("${mypage.email}");
-		$('#nickname').val("${mypage.nickname}");
-	});
-</script>
-
 <style>
 form {
 	margin: 0 auto;
@@ -30,6 +19,7 @@ form {
 input {
 	text-align: center;
 }
+
 </style>
 
 <link rel="stylesheet" type="text/css"
@@ -45,8 +35,7 @@ input {
 			flush="false" />
 	</div>
 
-	<form action="/mypage/deleteOK" enctype="multipart/form-data"
-		method="POST">
+	<form action="/mypage/deleteOK" method="POST">
 
 		<div>
 			<p style="font-size: 20px; font-weight: 900; text-align: center;">마이페이지(탈퇴)</p>
@@ -70,10 +59,9 @@ input {
 		<div class="form-group">
 			<label
 				style="font-size: 14px; font-weight: 700; margin-top: -30px; margin-left: 42%;">이메일</label>
-			<input type="text" class="form-control" id="email" name="email"
-				style="background: none;" readonly>
+			<input type="text" class="form-control" style="background: none; color: black;" value="${mypage.email}" name="email" readonly>
 		</div>
-		
+
 		<div class="form-group">
 			<label
 				style="font-size: 14px; font-weight: 550; margin-top: 5%; margin-left: 46%;">pw</label>
@@ -90,7 +78,7 @@ input {
 					<button type="submit" class="btn btn-default btn-sm">탈퇴</button>
 				</div>
 			</div>
-			
+
 		</div>
 	</form>
 

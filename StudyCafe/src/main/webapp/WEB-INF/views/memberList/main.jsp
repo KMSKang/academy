@@ -13,7 +13,7 @@ table th {
 	text-align: center;
 }
 
-#td {
+table td{
 	vertical-align: middle;
 }
 </style>
@@ -48,12 +48,13 @@ table th {
 					<th>이메일</th>
 					<th>비밀번호</th>
 					<th>가입일</th>
+					<th>관리</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${memberList}" var="memberList">
 					<tr>
-						<td id="td">${memberList.no}</td>
+						<td style="vertical-align: middle;">${memberList.no}</td>
 
 						<!-- 카카오라는 글자가 있으면 -->
 						<c:if test="${memberList.photo.indexOf('kakaocdn') != -1}">
@@ -66,16 +67,40 @@ table th {
 							<td><img src="/uploadFile/memberPhoto/${memberList.photo}"
 								class="img-circle" style="width: 100px; height: 100px;"></td>
 						</c:if>
+						<td style="vertical-align: middle;">${memberList.nickname}</td>
+						<td style="vertical-align: middle;" id="email">${memberList.email}</td>
+						<td style="vertical-align: middle;">${memberList.pw}</td>
+						<td style="vertical-align: middle;">${memberList.date}</td>
+						<td><input type="button" class="btn btn-default btn-sm" style="margin-top:30%;" value="강제탈퇴"></td>
 						
-						<td id="td">${memberList.nickname}</td>
-						<td id="td">${memberList.email}</td>
-						<td id="td">${memberList.pw}</td>
-						<td id="td">${memberList.date}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</form>
+	
+	<script>
+	$(document).ready(function() {
+		$(".btn").click(function() {
+			var emailValue = ($(this).parent().parent().children("#email").html());
+			 $.ajax({
+		  			 url : 'http://localhost/memberList/delete',
+					 method : 'POST',
+					 data : {
+				     email : emailValue
+					 },
+					 success: function(result){
+						 window.location.reload();
+					 },
+					 error: function(result){
+						 alert("실패");
+					 }
+		});
+	});
+	});
+	</script>
+
 
 </body>
 </html>
+

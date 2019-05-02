@@ -13,4 +13,7 @@ public interface MypageDaoInt {
 	// 마이페이지 탈퇴 - (실행)
 	public int delete(MypageVO mypageVO);
 	
+	// 마이페이지 탈퇴 [아이디,패스워드] - (실행)
+	public String selectOneCheck(MypageVO mypageVO);
+	
 }

@@ -1,59 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/css/bootstrap-theme.css" />
-
-
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/resources/bootstrap/datepicker/moment-with-locales.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/datepicker/bootstrap-datetimepicker-standalone.css" />
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/datepicker/bootstrap-datetimepicker.css" />
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/bootstrap/datepicker/bootstrap-datetimepicker.min.css" />
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/resources/bootstrap/datepicker/bootstrap-datepicker.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/resources/bootstrap/datepicker/bootstrap-datepicker.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/resources/bootstrap/datepicker/bootstrap-datetimepicker.js"></script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+    }
+    .one{
+        width: 80%;
+        height: 100vh;
+        margin: auto;
+        min-width: 200px;
+        background-color: red;
+    }
+    .two{
+        width: 100%;
+        height: 500px;
+        background-color: yellow;
+        margin: 10% 0;
+    }
+    .three{
+        background-color:green; 
+        height: 100%;
+        width: 20%;
+        float: left;
+    }
+</style>
 </head>
 <body>
-
-	<div>
-		<jsp:include page="/WEB-INF/views/category/userCategory.jsp"
-			flush="false" />
-	</div>
-
-	<div style="overflow: hidden;">
-		<div class="form-group">
-			<div class="row">
-				<div class="col-md-8">
-					<div id="datetimepicker12"></div>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript">
-			$(function() {
-				$('#datetimepicker12').datetimepicker({
-					inline : true,
-					sideBySide : true
-				});
-			});
-		</script>
-	</div>
-
-
+    <div class="one">dd
+        <div class="two">dd
+            <div class="three"></div>
+        </div>        
+    </div>
 </body>
 </html>
+ ​
