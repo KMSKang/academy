@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team150.mappers.questionMapper">
+	
+	
+	
+	<!-- 문의하기 리스트 -->
+	<select id="questionListAll" resultType="com.team150.Question.Model.QuestionVO">
+		SELECT * FROM question
+	</select>
+	
+	
+	
+	<!-- 1:1 문의하기 리스트 (실행) -->
+	<select id="questionListAllUid" resultType="com.team150.Question.Model.QuestionVO">
+		SELECT * FROM question WHERE quemail = #{uid}
+	</select>
+
+
+	
+	<!-- 문의하기 등록 -->
+	<insert id="questionCreate" parameterType="com.team150.Question.Model.QuestionVO">
+		INSERT INTO question (quemail, qutitle, qucontent, qudate) 
+		value ( #{quemail}, #{qutitle}, #{qucontent}, now() )
+	</insert>
+	
+	
+	
+	<!-- 문의하기 상세, 리뷰 수정 -->
+	<select id="questionSelectOne" resultType="com.team150.Question.Model.QuestionVO">
+		SELECT * FROM question where quseq=#{quseq}
+	</select>
+	
+	
+	
+	<!-- 문의하기 수정 -->
+	<update id="questionUpdate" parameterType="com.team150.Question.Model.QuestionVO">
+		UPDATE question	SET quemail = #{quemail}, qutitle = #{qutitle}, qucontent = #{qucontent} WHERE quseq = #{quseq}
+	</update>
+	
+	
+	
+	<!-- 문의하기 삭제 -->
+	<delete id="questionDelete" parameterType="com.team150.Question.Model.QuestionVO">
+		DELETE FROM question WHERE quseq = #{quseq}
+	</delete>
+	
+	
+	
+	<!-- 문의+답변 삭제 (실행) -->
+	<delete id="allDelete" parameterType="com.team150.Question.Model.AnswerVO">
+		DELETE FROM question1 WHERE quseq = #{quseq}
+	</delete>
+	
+	
+	
+	<!-- 답변하기 등록 -->
+	<insert id="answerCreate" parameterType="com.team150.Question.Model.AnswerVO">
+		INSERT INTO question1 (naname, nacontent, nadate, quseq) 
+		value ( #{naname}, #{nacontent}, now(), #{quseq} )
+	</insert>
+	
+	
+	
+	<!-- 답변하기 리스트 -->
+	<select id="answerListAll" resultType="com.team150.Question.Model.AnswerVO">
+		SELECT * FROM question1
+	</select>
+	
+	
+	
+	<!-- 답변하기 수정 (페이지)-->
+	<select id="answerSelectOne" resultType="com.team150.Question.Model.AnswerVO">
+		SELECT * FROM question1 where naseq=#{naseq}
+	</select>
+	
+	
+	
+	<!-- 답변하기 수정 (실행) -->
+	<update id="answerUpdate" parameterType="com.team150.Question.Model.AnswerVO">
+		UPDATE question1 SET nacontent = #{nacontent} WHERE naseq = ${naseq}
+	</update>
+	
+	
+	
+	<!-- 답변하기 삭제 (실행) -->
+	<delete id="answerDelete" parameterType="com.team150.Question.Model.AnswerVO">
+		DELETE FROM question1 WHERE naseq=#{naseq}
+	</delete>
+	
+	
+	
+</mapper>
